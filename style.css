@@ -9,6 +9,11 @@ body {
   font-family: "BioRhyme", serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .container{
   background-color: #e3afbc ;
 }
