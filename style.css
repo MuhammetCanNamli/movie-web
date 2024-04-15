@@ -213,8 +213,8 @@ a {
   display: flex;
   font-size: 120px ;
   position: absolute;
-  right: 0;
-  top: 100px;
+  right: 10px;
+  top: 170px;
   opacity: .5;
   transition: .5s ease all;
   cursor: pointer;
