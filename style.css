@@ -4,7 +4,6 @@
 * {
   margin: 0;
 }
-/* !navbar belli etme */
 
 body {
   font-family: "BioRhyme", serif;
@@ -13,9 +12,8 @@ body {
 .container{
   background-color: #e3afbc ;
 }
-/* Colors used: koyuVişne(#5D001E), enAçıkPembe (#f6d9df), tozPembe(#E3AFBC), parlakPembe(#9A1250), pimbe(#EE4C7C)
+/* Colors used: Baal Red Wash(#5D001E), #f6d9df, Melanie(#E3AFBC), #9A1250, #EE4C7C */
 
- */
 .navbar {
   background-color: #9d6564;
   height: 60px;
@@ -40,14 +38,12 @@ body {
   list-style: none;
   column-gap: 30px;
 }
-.menu-list-item.active {
+.menu-list-item.active,
+.menu-list-item:hover {
   font-weight: bold;
 }
 .menu-list-item {
   cursor: pointer;
-}
-.menu-list-item:hover {
-  font-weight: bold;
 }
 .profile-picture {
   width: 32px;
@@ -64,9 +60,9 @@ body {
 }
 
 .profile-container {
-  display: flex; /* yanyana sıralar*/
-  align-items: center; /*ortalar*/
-  column-gap: 20px; /* içerdeki etiketi arasını açar*/
+  display: flex; /* side by side sorting */
+  align-items: center; /* center */
+  column-gap: 20px; /* Spaces the elements in the navbar */
 }
 
 .toggle {
@@ -94,7 +90,7 @@ body {
   right: 1px;
 }
 
-/*! sidebar belli etme*/
+/* Making the sidebar prominent */
 .sidebar {
   background-color: #9d6564;
   color: #5d001e;
@@ -115,11 +111,9 @@ body {
   cursor: pointer;
 }
 
-/*!anaekran*/
+/* Main Screen */
 .featured-title {
   padding-bottom: 50px;
-  /*height: 880x;*/
-  margin-left: 0px;
   width: 100%;
 }
 .content-wrapper {
@@ -155,7 +149,7 @@ body {
   height: 500px;
   display: flex;
   align-items: center;
-  column-gap: 30px;   /* aralarını açma */
+  column-gap: 30px;   /* Spaces the elements */
   transform: translateX(0);
   transition: 1s all ease-in-out;
 }
@@ -271,6 +265,7 @@ body {
   z-index: 1;
   left: 50%;
   margin-left: -5em;
+  margin-top: -170px;
   background: #111;
   width: 10em;
   height: 10em;
@@ -278,15 +273,14 @@ body {
   border-radius: 50%;
   font-size: 0.5em;
   display: block;
-  box-shadow: 0px 0px 5px 0px #333;
-  margin-top: -170px;
+  box-shadow: 0 0 5px 0 #333;
 }
 
 .arrow {
   float: left;
   position: relative;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-width: 3em 3em 0 3em;
   border-color: #ffffff transparent transparent transparent;
@@ -300,8 +294,8 @@ body {
   position: absolute;
   top: -3.2em;
   left: -3em;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-width: 3em 3em 0 3em;
   border-color: #111 transparent transparent transparent;
@@ -309,38 +303,14 @@ body {
 }
 
 @-webkit-keyframes arrows {
-  0% {
+  0%, 20%, 60%, 100% {
     top: 0;
   }
-  10% {
+  10%, 30%, 50%, 70%, 90% {
     top: 12%;
   }
-  20% {
-    top: 0;
-  }
-  30% {
-    top: 12%;
-  }
-  40% {
+  40%, 80% {
     top: -12%;
-  }
-  50% {
-    top: 12%;
-  }
-  60% {
-    top: 0;
-  }
-  70% {
-    top: 12%;
-  }
-  80% {
-    top: -12%;
-  }
-  90% {
-    top: 12%;
-  }
-  100% {
-    top: 0;
   }
 }
 
