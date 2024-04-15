@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <!--! SİDEBAR-->
+    <!-- SİDEBAR-->
     <div class="sidebar">
       <i class="bi bi-search"></i>
       <a href="index.html"><i class="bi bi-house-door-fill"></i></a>
@@ -49,7 +49,7 @@
       <i class="bi bi-gear-fill"></i>
     </div>
 
-    <!--! ANAEKRAN-->
+    <!-- HOMESCREEN -->
     <div class="container">
       <div class="content-wrapper">
         <div class="featured-content">
@@ -60,7 +60,7 @@
           <div id="content"></div>
           <!--  -->
         </div>
-        <!--filter başlangıcı  -->
+        <!-- filter start  -->
         <div class="movie-list-filter">
           <select>
             <option>Aksiyon</option>
@@ -69,8 +69,9 @@
             <option>Bilim Kurgu</option>
           </select>
         </div>
-        <!--filter bitişi  -->
-        <!--movie list başlangıcı  -->
+        <!-- filter end  -->
+        
+        <!-- movie list start  -->
         <div class="movie-list-container">
           <h1 class="movie-list-title">Popüler</h1>
           <div class="movie-list-wrapper">
@@ -284,7 +285,7 @@
             <i class="bi bi-chevron-right icon-arrow"></i>
           </div>
         </div>
-        <!--movie list bitişi  -->
+        <!--movie list end  -->
         
       </div>
     </div>
@@ -292,24 +293,24 @@
     <script>
       //Code stolen from css-tricks and improved for smooth scrolling:
       $(function () {
-        // Tüm bağlantıları seç ve bu bağlantıların içinde # içerenlerden # haricindekileri al
+        // Select all links and get # from those containing # except #
         $("a[href*=#]:not([href=#])").click(function () {
-          // Bağlantının yolunu al, başında / varsa kaldır
+          // Get the path of the link, remove / at the beginning if any
           var path = location.pathname.replace(/^\//, "");
-          // Bağlantının hostname'ini al
+          // Get the hostname of the connection
           var host = location.hostname;
-          // Bağlantının pathname'i ve hostname'i bu sayfanın pathname'i ve hostname'ine eşitse devam et
+          // If the link's pathname and hostname are equal to this page's pathname and hostname, continue
           if (path == this.pathname.replace(/^\//, "") && host == this.hostname) {
-            // Bağlantının hedefini seç, eğer yoksa bağlantının href'indeki # hariç kalan kısmı al
+            // Select the target of the link, if not, take the remaining part of the link's href except the #
             var target = $(this.hash);
             target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
-            // Hedef varsa ve bulunduysa
+            // If there is a target and it is found
             if (target.length) {
-              // Sayfayı pürüzsüz bir şekilde hedefe kaydır
+              // Scroll the page smoothly to the target
               $("html,body").animate({
                   scrollTop: target.offset().top,
               }, 1000);
-              // Linki etkisiz hale getir
+              // Disable the link
               return false;
             }
           }
