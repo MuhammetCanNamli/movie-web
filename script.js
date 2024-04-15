@@ -7,9 +7,9 @@ arrows.forEach((arrows, i) => {
 
   arrows.addEventListener("click", () => {
     clickCounter++;
-    const transformValue = movieList[i].style.transform || windows.getComputedStyle(movieList[i]).transform;
-    const currentTranslateX = transformValue ? parseFloat(transformValue.match(/-?\+/)[0]) : 0;
-
+    const transformValue = movieList[i].style.transform || window.getComputedStyle(movieList[i]).transform;
+    const currentTranslateX = transformValue ? parseFloat(transformValue.match(/-?\d+/)[0]) : 0;
+    
     if (imgItem - (4 + clickCounter) >= 0) {
       movieList[i].style.transform = `translateX(${currentTranslateX - 300}px)`;
     } else {
