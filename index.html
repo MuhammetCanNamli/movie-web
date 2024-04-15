@@ -9,6 +9,7 @@
   </head>
 
   <body >
+
     <!--! NAVBAR -->
     <div class="navbar">
       <div class="navbar-wrapper ">
@@ -24,7 +25,7 @@
           </ul>
         </div>
         <div class="profile-container">
-          <a href="https://www.linkedin.com/in/asyayankavi" target="_blank"><img class="profile-picture" src="filmFoti/icon.jpeg"/></a>
+          <a href="https://www.linkedin.com/in/asyayankavi" target="_blank"><img class="profile-picture" src="filmFoti/icon.jpeg" alt="Profile Picture"/></a>
           <div class="profile-text-container">
             <span class="profile-text">Hesap </span>
             <i class="bi bi-caret-down-fill"></i>
@@ -37,6 +38,7 @@
         </div>
       </div>
     </div>
+
     <!--! SİDEBAR-->
     <div class="sidebar">
       <i class="bi bi-search"></i>
@@ -46,8 +48,8 @@
       <i class="bi bi-hourglass-top"></i>
       <i class="bi bi-gear-fill"></i>
     </div>
-    <!--! ANAEKRAN-->
 
+    <!--! ANAEKRAN-->
     <div class="container">
       <div class="content-wrapper">
         <div class="featured-content">
@@ -288,25 +290,26 @@
     </div>
     <script src="jquery.min.js"></script>
     <script>
-      //Code stolen from css-tricks for smooth scrolling:
+      //Code stolen from css-tricks and improved for smooth scrolling:
       $(function () {
+        // Tüm bağlantıları seç ve bu bağlantıların içinde # içerenlerden # haricindekileri al
         $("a[href*=#]:not([href=#])").click(function () {
-          if (
-            location.pathname.replace(/^\//, "") ==
-              this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-          ) {
+          // Bağlantının yolunu al, başında / varsa kaldır
+          var path = location.pathname.replace(/^\//, "");
+          // Bağlantının hostname'ini al
+          var host = location.hostname;
+          // Bağlantının pathname'i ve hostname'i bu sayfanın pathname'i ve hostname'ine eşitse devam et
+          if (path == this.pathname.replace(/^\//, "") && host == this.hostname) {
+            // Bağlantının hedefini seç, eğer yoksa bağlantının href'indeki # hariç kalan kısmı al
             var target = $(this.hash);
-            target = target.length
-              ? target
-              : $("[name=" + this.hash.slice(1) + "]");
+            target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+            // Hedef varsa ve bulunduysa
             if (target.length) {
-              $("html,body").animate(
-                {
+              // Sayfayı pürüzsüz bir şekilde hedefe kaydır
+              $("html,body").animate({
                   scrollTop: target.offset().top,
-                },
-                1000
-              );
+              }, 1000);
+              // Linki etkisiz hale getir
               return false;
             }
           }
